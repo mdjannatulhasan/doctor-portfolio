@@ -69,6 +69,11 @@
     object-fit: cover;
 }
 @media only screen and (max-width:768px) {
+    
+    
+    .desktop-menu{
+        display: none;
+    }
     .hero h1{
         font-size: 36px;
     }

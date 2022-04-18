@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer className='py-5 text-white'>
             <div className="container">
-                <div className="row">
+                <div className="row text-center flex-column justify-content-center align-items-center">
                     <div className="col-lg-4">
                         <div className="brand">
                             Doctor Sakib

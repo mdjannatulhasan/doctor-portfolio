@@ -10,6 +10,7 @@ import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import app from './firebase.init';
 import RequireAuth from './components/RequireAuth/RequireAuth';
+import NoRoute from './components/NoRoute/NoRoute';
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path='/checkout2' element={<Checkout></Checkout>}></Route>
                 <Route path='/login' element={<Login></Login>}></Route>
                 <Route path='/register' element={<Register></Register>}></Route>
+                <Route path='*' element={< NoRoute />}></Route>
             </Routes>
             <Footer></Footer>
         </div>
