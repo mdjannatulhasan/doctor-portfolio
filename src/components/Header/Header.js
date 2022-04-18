@@ -31,8 +31,7 @@ const Header = () => {
                             user?.uid
                                 ?
                                 <>
-                                    <h5>{user.displayName}</h5>
-                                    <button className='txt-primary btn btn-link text-decoration-none' onClick={() => { signOut(auth) }}> Sign Out</button>
+                                    <a className='txt-primary btn-link text-decoration-none' onClick={() => { signOut(auth) }}> Sign Out</a>
                                 </>
                                 :
                                 <><Link to="/login">Login</Link> <Link to="/register">Register</Link></>

@@ -18,6 +18,7 @@ nav{
 }
 nav a:hover{
     color:#13595a;
+    cursor: pointer;
 }
 .brand{
     font-size: 28px;
