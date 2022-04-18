@@ -1,26 +1,54 @@
 import { getAuth } from 'firebase/auth';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import app from '../../firebase.init';
 import './Register.css';
 
 
 const auth = getAuth(app);
 const Register = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordConfirm, setPasswordConfirm] = useState('');
+    const [error, setError] = useState('');
+
+    const handleEmailBlur = (event) =>{
+        setEmail(event.target.value );
+    }
+    const handlePasswordBlur = (event) =>{
+        setPassword(event.target.value );
+    }
+    const handleConfirmPasswordBlur = (event) =>{
+        setPasswordConfirm(event.target.value );
+    }
+    const handleError = (event) =>{
+        setError(event.target.value );
+    }
+
+    const handleCreateUser = event => {
+        event.preventDefault();
+        if(password != passwordConfirm){
+            setError("Password doesn't match");
+            return;
+        } else setError('');
+    }
+
     return (
-        <div>
+        <div className='mb-5'>
             <Container>
                 <div className='form-container mx-auto'>
-                    <Form className=''>
+                    <Form className='' onSubmit={handleCreateUser}>
                         <h2 className='mb-3'>Please Register Here</h2>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Your Name</Form.Label>
-                            <Form.Control type="text" placeholder="Enter Full Name" />
+                            <Form.Control  type="text" name="name" placeholder="Enter Full Name" />
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+                            <Form.Control onBlur={handleEmailBlur} type="email" name="email" placeholder="Enter email" required/>
                             <Form.Text className="text-muted">
                                 We'll never share your email with anyone else.
                             </Form.Text>
@@ -28,14 +56,22 @@ const Register = () => {
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" placeholder="Password" />
+                            <Form.Control onBlur={handlePasswordBlur} type="password" name="password" placeholder="Password" required/>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
+
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Confirm Password</Form.Label>
+                            <Form.Control onBlur={handleConfirmPasswordBlur}type="password" name="password-confirm" placeholder="Password" required/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Register
-                        </Button>
+                        
+                        <p className='text-danger'>{error}</p>
+
+                        <div className="d-flex align-items-center">
+                            <Button variant="primary" type="submit">
+                                Register
+                            </Button>
+                            <Link className='ms-3 txt-primary inline-block' to='/login'>Already have an account? Please login here</Link>
+                        </div>
                     </Form>
                 </div>
             </Container>
