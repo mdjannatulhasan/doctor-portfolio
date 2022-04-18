@@ -21,6 +21,9 @@ const Header = () => {
                     <ul>
                         <li>
                             <CustomLink to="/">Home</CustomLink>
+                            <CustomLink to="/blog">Blog</CustomLink>
+                            <CustomLink to="/checkout">Checkout</CustomLink>
+                            <CustomLink to="/checkout2">Checkout2</CustomLink>
                         </li>
                     </ul>
                     <div className="login">

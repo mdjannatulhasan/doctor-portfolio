@@ -14,12 +14,12 @@ const Footer = () => {
                     </div>
                     <div className="col-lg-4">
                         <Link to="/">Home</Link>
-                        <Link to="/">Home</Link>
+                        <Link to="/Blog">Blog</Link>
                         <Link to="/">Home</Link>
                     </div>
                     <div className="col-lg-4">
                         <div className="social-links">
-                            
+
                         </div>
                     </div>
                 </div>
