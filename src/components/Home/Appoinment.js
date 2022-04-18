@@ -17,7 +17,7 @@ const Appoinment = () => {
                                     Are you in confusion about what to do, or do you need any surgery or not? Let's discuss about your issue and find out if you really needs a surgery
                                 </div>
                                 <div className="pack-price">TK. 3000</div>
-                                <Link className="btn btn-primary" to='/'> Book now </Link>
+                                <Link className="btn btn-primary" to='/checkout'> Book now </Link>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -37,7 +37,7 @@ const Appoinment = () => {
                                     Aorto Plasty or any others according to your need
                                 </div>
                                 <div className="pack-price">TK. 4000</div>
-                                <Link className="btn btn-primary" to='/'> Book now </Link>
+                                <Link className="btn btn-primary" to='/checkout'> Book now </Link>
                             </div>
                         </div>
                         <div className="col-lg-4">
@@ -54,7 +54,7 @@ const Appoinment = () => {
                                     Thromboembolectomy (Extra charges applicable)
                                 </div>
                                 <div className="pack-price">TK. 5000</div>
-                                <Link className="btn btn-primary" to='/'> Book now </Link>
+                                <Link className="btn btn-primary" to='/checkout'> Book now </Link>
                             </div>
                         </div>
                     </div>
