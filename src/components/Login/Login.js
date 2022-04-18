@@ -1,12 +1,18 @@
+import { getAuth } from 'firebase/auth';
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
+import {useSignInWithGoogle} from 'react-firebase-hooks/auth';
+import app from '../../firebase.init';
 
+
+const auth = getAuth(app);
 const Login = () => {
+    const [signInWithGoogle, user] = useSignInWithGoogle(auth);
     return (
         <div>
             <Container>
-                <div className='w-md-50'>
-                    <Form className='form-container mx-auto'>
+                <div className='form-container mx-auto'>
+                    <Form className=''>
                         <h2>Please Login</h2>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
@@ -24,9 +30,10 @@ const Login = () => {
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit
+                            Login
                         </Button>
                     </Form>
+                    <Button className='mt-4 mb-5' onClick={()=>{signInWithGoogle()}}>Google Sign In</Button>
                 </div>
             </Container>
         </div>

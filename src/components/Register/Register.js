@@ -1,15 +1,19 @@
+import { getAuth } from 'firebase/auth';
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
+import app from '../../firebase.init';
 import './Register.css';
 
+
+const auth = getAuth(app);
 const Register = () => {
     return (
         <div>
             <Container>
-                <div className='w-md-50'>
-                    <Form className='form-container mx-auto'>
-                        <h2>Please Register Here</h2>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                <div className='form-container mx-auto'>
+                    <Form className=''>
+                        <h2 className='mb-3'>Please Register Here</h2>
+                        <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Your Name</Form.Label>
                             <Form.Control type="text" placeholder="Enter Full Name" />
                         </Form.Group>
@@ -30,7 +34,7 @@ const Register = () => {
                             <Form.Check type="checkbox" label="Check me out" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
-                            Submit
+                            Register
                         </Button>
                     </Form>
                 </div>
