@@ -1,0 +1,81 @@
+.hero{
+    background-image: url('../../images/doctorHeader.jpeg');
+}
+.hero h1{
+    font-size: 46px;
+    font-weight: bold;
+}
+.sub-title{
+    font-size:24px;
+    font-weight: 500;
+}
+.header-body{
+    max-width: 700px;
+    font-size: 18px;
+}
+.btn{
+    text-transform: uppercase;
+    font-weight: 600 !important;
+    border-radius: 0 !important;
+    padding: 8px 25px !important;
+}
+.btn-primary{
+    background-color: #358788 !important;
+    border-color: #358788 !important;
+}
+.btn-primary:hover{
+    background-color: #1f4c4d !important;
+    border-color: #1f4c4d !important;
+}
+.txt-primary{
+    color: #1f4c4d !important;
+}
+.sec-title{
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+.about-dr{
+    font-size: 18px;
+}
+.about-dr img{
+    width: 100%;
+}
+.sec-sub-title{
+    font-weight: 600;
+}
+.package{
+    border: 1px solid #35878899;
+    padding: 20px 20px 35px;
+    text-align: center;
+}
+.pack-title{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+}
+.pack-desc{
+    margin: 15px 0;
+}
+.pack-price{
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: 700;
+}
+.pack-img img{
+    width: 100%;
+    margin-bottom: 20px;
+    height: 220px;
+    object-fit: cover;
+}
+@media only screen and (max-width:768px) {
+    .hero h1{
+        font-size: 36px;
+    }
+    .sub-title{
+        font-size:21px;
+    }
+    .header-body{
+        font-size: 16px;
+    }
+}
